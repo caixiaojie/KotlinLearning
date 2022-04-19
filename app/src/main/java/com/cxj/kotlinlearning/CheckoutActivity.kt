@@ -1,5 +1,6 @@
 package com.cxj.kotlinlearning
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,14 @@ import com.cxj.kotlinlearning.databinding.ActivityCheckoutBinding
  * Checkout implementation for the app
  */
 class CheckoutActivity : AppCompatActivity() {
+    companion object {
+        @JvmStatic
+        fun start(context: Context) {
+            val starter = Intent(context, CheckoutActivity::class.java)
+//                .putExtra()
+            context.startActivity(starter)
+        }
+    }
 
     // Arbitrarily-picked constant integer you define to track a request for payment data activity.
     private val loadPaymentDataRequestCode = 991
@@ -47,6 +56,7 @@ class CheckoutActivity : AppCompatActivity() {
 
         // Check whether Google Pay can be used to complete a payment
         model.canUseGooglePay.observe(this, Observer(::setGooglePayAvailable))
+
     }
 
     /**

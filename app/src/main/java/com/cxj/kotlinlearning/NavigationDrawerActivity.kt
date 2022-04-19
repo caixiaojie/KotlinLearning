@@ -1,5 +1,6 @@
 package com.cxj.kotlinlearning
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -11,7 +12,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
+import androidx.palette.graphics.Palette
+import androidx.palette.graphics.Target
+import androidx.palette.graphics.get
 import com.cxj.kotlinlearning.databinding.ActivityNavigationDrawerBinding
+import com.cxj.kotlinlearning.ui.palette.MainPaletteActivity
+import com.cxj.kotlinlearning.ui.palette.PaletteActivity
 import com.cxj.kotlinlearning.util.dialogtest.DialogsShowActivity
 
 class NavigationDrawerActivity : AppCompatActivity() {
@@ -46,6 +53,15 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
         binding.navView.setNavigationItemSelectedListener {
             when(it.itemId) {
+                R.id.nav_home -> {
+                    CheckoutActivity.start(this)
+                }
+                R.id.nav_gallery -> {
+                    PaletteActivity.start(this)
+                }
+                R.id.nav_slideshow -> {
+                    MainPaletteActivity.start(this)
+                }
                 R.id.nav_dialog_show -> {
                     DialogsShowActivity.start(this)
                 }

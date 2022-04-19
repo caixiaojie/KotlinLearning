@@ -33,7 +33,11 @@
             android:exported="true"
             android:label="@string/title_activity_checkout"
             android:theme="@style/Theme.KotlinLearning">
-        </activity> <!-- This element is required to enable Google Pay in your app. -->
+        </activity>
+        <activity android:name=".ui.palette.MainPaletteActivity"
+            android:theme="@style/Theme.KotlinLearning.NoActionBar"/>
+        <activity android:name=".ui.palette.PaletteActivity"
+            android:theme="@style/Theme.KotlinLearning.NoActionBar" /> <!-- This element is required to enable Google Pay in your app. -->
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
