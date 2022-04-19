@@ -10,18 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinLearning">
         <activity
-            android:name=".CheckoutActivity"
+            android:name=".NavigationDrawerActivity"
             android:exported="true"
-            android:label="@string/title_activity_checkout"
-            android:theme="@style/Theme.KotlinLearning">
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/Theme.KotlinLearning.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- This element is required to enable Google Pay in your app. -->
+        <activity
+            android:name=".BasicActivity"
+            android:exported="false"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/Theme.KotlinLearning.NoActionBar" />
+        <activity
+            android:name=".util.dialogtest.DialogsShowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="true"
+            android:label="@string/title_activity_checkout"
+            android:theme="@style/Theme.KotlinLearning">
+        </activity> <!-- This element is required to enable Google Pay in your app. -->
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />
